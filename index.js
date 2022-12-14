@@ -1,12 +1,11 @@
 const apiKey = 'f8d444cda9241a4d740068858e582423';
 
-
 const submitButton = () => {
     const cityName = document.querySelector('#inputCity').value;
     
     getWeather(cityName);
     //saves the city to local storage
-    localStorage.setItem('cities' , JSON.stringify([cityName]));
+    localStorage.setItem('cities' , JSON.stringify(cityName));
 
 };
 
@@ -45,5 +44,15 @@ const getWeather = (city) => {
             const currentHumidity = document.createElement('p').innerHTML = res.main.humidity; + '%';
             weatherCard.append(cityTitle, currentTemperature, currentWindSpeed, currentHumidity);
             weather.append(weatherCard);
-        })
+        });
+    // const geoCordinates = 'https://api.openweathermap.org/geo/1.0/direct?q=' + city + '&appid=' + apiKey;
+    
+    // api call for geo cordinates in order to get 5 day forecast
+    // fetch(geoCordinates)
+    // .then((res) => {
+    //     console.log(res);
+    //     return res.json();
+    // })
 };
+// const onSubmit = document.querySelector('#btn');
+// onSubmit.addEventListener('click', submitButton);
