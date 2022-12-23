@@ -11,7 +11,7 @@ const submitButton = () => {
 
 //function to get weather data
 const getWeather = (cityName) => {
-    const getCurrentWeather = 'https://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&appid=' + apiKey;
+    const getCurrentWeather = 'https://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&appid=' + apiKey + '&units=imperial';
     // console.log(cityName);
 
     //api call to get current weather
@@ -48,11 +48,11 @@ const getWeather = (cityName) => {
             weather.append(cityTitle, currentTemperature, currentWindSpeed, currentHumidity);
             // weather.append(weatherCard);
         });
-    foreCastWeather(cityName);
+    forecastWeather(cityName);
 };
 
-const foreCastWeather = (cityName) => {
-    const geoCordinates = 'https://api.openweathermap.org/geo/1.0/direct?q=' + cityName + '&appid=' + apiKey;
+const forecastWeather = (cityName) => {
+    const geoCordinates = 'https://api.openweathermap.org/geo/1.0/direct?q=' + cityName + '&appid=' + apiKey + '&units=imperial';
 
     // api call for geo cordinates in order to get 5 day forecast
     fetch(geoCordinates)
