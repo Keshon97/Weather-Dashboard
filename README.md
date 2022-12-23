@@ -9,4 +9,3 @@ Weather Dashboard is an application that allows users to input any city in the U
 
 ## Challenges
 
-Currently, the weather info only shows in the console.

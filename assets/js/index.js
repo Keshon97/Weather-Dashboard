@@ -11,7 +11,7 @@ const submitButton = () => {
 
 //function to get weather data
 const getWeather = (cityName) => {
-    const getCurrentWeather = 'https:api.openweathermap.org/data/2.5/weather?q=' + cityName + '&appid=' + apiKey;
+    const getCurrentWeather = 'https://api.openweathermap.org/data/2.5/weather?q=' + cityName + '&appid=' + apiKey;
     // console.log(cityName);
 
     //api call to get current weather
